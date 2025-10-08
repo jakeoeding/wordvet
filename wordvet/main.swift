@@ -7,5 +7,10 @@
 
 import Foundation
 
-print("Hello, World!")
+// TODO: accept a file as command line arg
+let filePath = ""
 
+guard let wordList = try? String(contentsOfFile: filePath, encoding: .utf8).split(separator: "\n") else {
+    print("Couldn't find \(filePath)")
+    exit(EXIT_FAILURE)
+}
