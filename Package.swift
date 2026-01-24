@@ -1,4 +1,4 @@
-// swift-tools-version: 6.2
+// swift-tools-version: 6.1
 
 import PackageDescription
 
@@ -7,13 +7,13 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/jakeoeding/DictionaryKit",
-            revision: "929e852f16c510fca4cdc7b06c28388cd63e9343"
-        )
+            revision: "6965031d373d863a9d44d2d939d76aa54dea0deb",
+        ),
     ],
     targets: [
         .executableTarget(
             name: "wordvet",
-            dependencies: ["DictionaryKit"]
+            dependencies: ["DictionaryKit"],
         ),
-    ]
+    ],
 )
