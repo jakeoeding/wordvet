@@ -1,5 +1,5 @@
 {
-  "originHash" : "f827a16dddd2781dfd02e3a9dc5333a572063dd2eccdaac9c5110d2cee232fd2",
+  "originHash" : "c0041e2052e3d57600aeb709bbbc5129a4089652f42d130d1f43eeea14863bad",
   "pins" : [
     {
       "identity" : "dictionarykit",
@@ -7,6 +7,15 @@
       "location" : "https://github.com/jakeoeding/DictionaryKit",
       "state" : {
         "revision" : "6965031d373d863a9d44d2d939d76aa54dea0deb"
+      }
+    },
+    {
+      "identity" : "swift-argument-parser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-argument-parser.git",
+      "state" : {
+        "revision" : "c5d11a805e765f52ba34ec7284bd4fcd6ba68615",
+        "version" : "1.7.0"
       }
     }
   ],

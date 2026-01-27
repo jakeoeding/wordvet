@@ -1,19 +1,17 @@
+import ArgumentParser
 import DictionaryKit
 import Foundation
 
 @main
-struct Entrypoint {
-    static func main() {
-        // TODO: accept a file as command line arg
-        let inputPath = ""
-        let outputPath = ""
+struct Wordvet: ParsableCommand {
+    @Option(name: .shortAndLong, help: "The input file to read from. Defaults to stdin if not provided.")
+    var inputPath: String?
 
-        guard let inputText = try? String(contentsOfFile: inputPath, encoding: .utf8) else {
-            print("Couldn't find \(inputPath)")
-            exit(EXIT_FAILURE)
-        }
+    @Option(name: .shortAndLong, help: "The file to write output to. Defaults to stdout if not provided.")
+    var outputPath: String?
 
-        let wordList = inputText.components(separatedBy: "\n")
+    mutating func run() throws {
+        let wordList = try readInput().components(separatedBy: "\n")
 
         var validWords: [String] = []
         if let dict = TTTDictionary(named: DCSNewOxfordAmericanDictionaryName) {
@@ -22,9 +20,27 @@ struct Entrypoint {
             }
         }
 
-        let outputText = validWords.joined(separator: "\n")
+        let outputText = validWords.joined(separator: "\n") + "\n"
 
-        try? outputText.write(
+        try writeOutput(outputText: outputText)
+    }
+
+    private func readInput() throws -> String {
+        guard let inputPath else {
+            let inputData = FileHandle.standardInput.readDataToEndOfFile()
+            return String(data: inputData, encoding: .utf8) ?? ""
+        }
+
+        return try String(contentsOfFile: inputPath, encoding: .utf8)
+    }
+
+    private func writeOutput(outputText: String) throws {
+        guard let outputPath else {
+            FileHandle.standardOutput.write(Data(outputText.utf8))
+            return
+        }
+
+        try outputText.write(
             to: URL(fileURLWithPath: outputPath),
             atomically: true,
             encoding: .utf8,
