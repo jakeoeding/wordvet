@@ -6,6 +6,10 @@ let package = Package(
     name: "wordvet",
     dependencies: [
         .package(
+            url: "https://github.com/apple/swift-argument-parser.git",
+            from: "1.7.0",
+        ),
+        .package(
             url: "https://github.com/jakeoeding/DictionaryKit",
             revision: "6965031d373d863a9d44d2d939d76aa54dea0deb",
         ),
@@ -13,7 +17,10 @@ let package = Package(
     targets: [
         .executableTarget(
             name: "wordvet",
-            dependencies: ["DictionaryKit"],
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                "DictionaryKit",
+            ],
         ),
     ],
 )
