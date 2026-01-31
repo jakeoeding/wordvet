@@ -1,12 +1,12 @@
 {
-  "originHash" : "c0041e2052e3d57600aeb709bbbc5129a4089652f42d130d1f43eeea14863bad",
+  "originHash" : "6de55d100a96ca94f3a2801c43e21ec518bb7e888b4bb7e56a56535d8ac09469",
   "pins" : [
     {
       "identity" : "dictionarykit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/jakeoeding/DictionaryKit",
+      "location" : "https://github.com/jakeoeding/DictionaryKit.git",
       "state" : {
-        "revision" : "6965031d373d863a9d44d2d939d76aa54dea0deb"
+        "revision" : "14440f493bcb1717b5947619c627c9f172618867"
       }
     },
     {

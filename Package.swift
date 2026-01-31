@@ -10,8 +10,8 @@ let package = Package(
             from: "1.7.0",
         ),
         .package(
-            url: "https://github.com/jakeoeding/DictionaryKit",
-            revision: "6965031d373d863a9d44d2d939d76aa54dea0deb",
+            url: "https://github.com/jakeoeding/DictionaryKit.git",
+            revision: "14440f493bcb1717b5947619c627c9f172618867",
         ),
     ],
     targets: [
