@@ -3,7 +3,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "wordvet",
+    name: "Wordvet",
+    products: [
+        .executable(
+            name: "wordvet",
+            targets: ["Wordvet"]
+        ),
+    ],
     dependencies: [
         .package(
             url: "https://github.com/apple/swift-argument-parser.git",
@@ -16,7 +22,7 @@ let package = Package(
     ],
     targets: [
         .executableTarget(
-            name: "wordvet",
+            name: "Wordvet",
             dependencies: [
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
                 "DictionaryKit",
