@@ -15,7 +15,7 @@ struct Wordvet: ParsableCommand {
 
         var validWords: [String] = []
         if let dict = TTTDictionary(named: DCSNewOxfordAmericanDictionaryName) {
-            for word in wordList where dict.entries(forSearchTerm: word) != nil {
+            for word in wordList where !dict.entries(forSearchTerm: word).isEmpty {
                 validWords.append(word)
             }
         }
