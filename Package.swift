@@ -17,7 +17,7 @@ let package = Package(
         ),
         .package(
             url: "https://github.com/jakeoeding/DictionaryKit.git",
-            revision: "14440f493bcb1717b5947619c627c9f172618867",
+            revision: "448915c89029aa8c42944d57fbc5da52928a82e4",
         ),
     ],
     targets: [
