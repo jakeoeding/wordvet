@@ -12,7 +12,7 @@ extension Wordvet.Dict {
         var identifier: String
 
         mutating func run() {
-            print(TTTDictionary.availableDictionaries().contains(where: { $0.identifier == identifier }))
+            print(TTTDictionary.availableDictionaries().contains { $0.identifier == identifier })
         }
     }
 }
