@@ -18,9 +18,7 @@ extension Wordvet.Dict {
                 availableDicts = availableDicts.filter { $0.primaryLanguage == locale }
             }
 
-            let maxLength = availableDicts.reduce(into: 0) { (maxLength, dict) in
-                maxLength = max(maxLength, dict.identifier?.count ?? 0)
-            }
+            let maxLength = availableDicts.compactMap { $0.identifier?.count }.max() ?? 0
 
             let formattedDictionaries = availableDicts
                 .map { dict in
