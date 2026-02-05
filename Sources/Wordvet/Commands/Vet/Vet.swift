@@ -19,7 +19,7 @@ extension Wordvet {
 
             var validWords: [String] = []
             if let dict = TTTDictionary(named: DCSNewOxfordAmericanDictionaryName) {
-                for word in wordList where !dict.entries(forSearchTerm: word).isEmpty {
+                for word in wordList where dict.contains(searchTerm: word) {
                     validWords.append(word)
                 }
             }
